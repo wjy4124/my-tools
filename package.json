@@ -1,0 +1,33 @@
+{
+  "name": "my-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "mt": "bin/mt.js"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.12",
+    "chalk": "^4.1.0",
+    "commander": "^6.0.0",
+    "copy": "^0.3.2",
+    "fis-parser-babel-6.x": "^6.24.1",
+    "fis3": "^3.4.44",
+    "fis3-hook-relative-legal-html": "^3.1.9",
+    "fis3-parser-ejs": "^2.1.9",
+    "fis3-parser-node-sass": "^1.0.7",
+    "fis3-server-browsersync": "^2.2.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-ejs": "^5.1.0",
+    "gulp-filter": "^6.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "liftoff": "^3.1.0",
+    "minimist": "^1.2.5"
+  }
+}
