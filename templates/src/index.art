@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <%- include('components/header'); %>
+  {{ include 'components/header' }}
   <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

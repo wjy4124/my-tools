@@ -1,7 +1,7 @@
 const { src, dest, series, watch } = require('gulp');
 let clean = require('gulp-clean')
 let gulpScss = require('gulp-sass')
-let gulpEjs = require('gulp-ejs')
+let gulpArtTemplate = require('gulp-art-tpl')
 let gulpRename = require('gulp-rename')
 let gulpFilter = require('gulp-filter')
 let gulpAutoprefixer = require('gulp-autoprefixer')
@@ -25,9 +25,12 @@ function css2() {
 }
 
 function html() {
-  return src(`${srcPath}/**/*.ejs`)
+  return src(`${srcPath}/**/*.art`)
     .pipe(gulpFilter(['**', '!*/components/**/*']))
-    .pipe(gulpEjs())
+    .pipe(gulpArtTemplate({
+    },{
+      extname: '.art',
+    }))
     .pipe(gulpRename({ extname: '.html' }))
     .pipe(dest(`${distPath}/`));
 }
@@ -58,7 +61,7 @@ exports.default = function() {
   series(cleanDist, css, html, js, assets)()
   watch(`${srcPath}/**/*.scss`, series(css))
   watch(`${srcPath}/**/*.js`, series(js))
-  watch(`${srcPath}/**/*.ejs`, series(html))
+  watch(`${srcPath}/**/*.art`, series(html))
   watch(`${srcPath}/assets/**/*`, series(assets))
 }
 
